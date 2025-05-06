@@ -55,7 +55,7 @@ export default function Navbar() {
             <Link href="#contacto" className="text-gray-800 hover:text-bmx-blue font-medium transition-colors">
               Contacto
             </Link>
-            <Button className="bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full">¡Inscríbete!</Button>
+            <Button className="bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full">¡Inscribite!</Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -97,7 +97,7 @@ export default function Navbar() {
             >
               Contacto
             </Link>
-            <Button className="bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full">¡Inscríbete!</Button>
+            <Button className="bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full">¡Inscribite!</Button>
           </nav>
         </div>
       )}

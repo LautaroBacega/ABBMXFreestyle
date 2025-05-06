@@ -6,7 +6,13 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Youtube, ChevronDown, MessageCircle } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Youtube, ChevronDown, MessageCircle, InstagramIcon } from "lucide-react"
+import foto1 from "../public/images/IMG_0810.jpeg"
+import foto2 from "../public/images/IMG_2999.jpeg"
+import foto3 from "../public/images/IMG_4506.jpeg"
+import foto4 from "../public/images/IMG_4936.jpeg"
+import foto5 from "../public/images/IMG_6412.jpeg"
+import foto6 from "../public/images/IMG_8794.jpeg"
 
 export default function Home() {
   const animatedElementsRef = useRef<HTMLElement[]>([])
@@ -64,12 +70,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-800">
-            ¡APRENDE <span className="text-bmx-blue">BMX</span> Y DIVIÉRTETE!
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-800">
+            ¡APRENDÉ <span className="text-bmx-blue">BMX</span> Y DIVERTITE!
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-700">
+          {/* <p className="text-xl md:text-2xl mb-8 text-gray-700">
             La escuela más divertida para aprender trucos increíbles
-          </p>
+          </p> */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full text-lg">
               ¡QUIERO INSCRIBIRME!
@@ -79,11 +85,11 @@ export default function Home() {
               variant="outline"
               className="border-bmx-blue text-bmx-blue hover:bg-bmx-blue/20 rounded-full text-lg"
             >
-              VER CLASES
+              VER HORARIOS
             </Button>
           </div>
 
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce">
             <ChevronDown className="h-10 w-10 text-gray-800" />
           </div>
         </div>
@@ -93,11 +99,11 @@ export default function Home() {
       <section id="horarios" className="w-full py-20 bg-white bg-dots">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-2 text-center animate-on-scroll section-title">
-            HORARIOS <span className="text-bmx-pink">SUPER COOL</span>
+            HORARIOS <span className="text-bmx-blue">DE CLASES</span>
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto animate-on-scroll">
+          {/* <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto animate-on-scroll">
             Elige el horario que más te guste y ven a divertirte con nosotros. ¡Tenemos clases para todos los niveles!
-          </p>
+          </p> */}
 
           <div className="overflow-x-auto animate-on-scroll">
             <div className="bg-white rounded-2xl shadow-lg p-6 overflow-hidden">
@@ -105,69 +111,59 @@ export default function Home() {
                 <TableHeader>
                   <TableRow>
                     <TableHead className="text-bmx-blue font-bold text-lg">Día</TableHead>
-                    <TableHead className="text-bmx-blue font-bold text-lg">Mañana</TableHead>
-                    <TableHead className="text-bmx-blue font-bold text-lg">Tarde</TableHead>
+                    <TableHead className="text-bmx-blue font-bold text-lg">Horario</TableHead>
                     <TableHead className="text-bmx-blue font-bold text-lg">Nivel</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow className="hover:bg-blue-50">
                     <TableCell className="font-bold text-gray-800">Lunes</TableCell>
-                    <TableCell>10:00 - 12:00</TableCell>
                     <TableCell>16:00 - 18:00</TableCell>
                     <TableCell>
-                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Principiantes
+                      <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
+                        Expertos
                       </span>
                     </TableCell>
                   </TableRow>
                   <TableRow className="hover:bg-blue-50">
                     <TableCell className="font-bold text-gray-800">Martes</TableCell>
-                    <TableCell>10:00 - 12:00</TableCell>
-                    <TableCell>16:00 - 18:00</TableCell>
+                    <TableCell>18:00 - 19:30</TableCell>
                     <TableCell>
-                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Intermedio
+                      <span className="bg-blue-100 text-blue-800 px-2 py-1 mr-2 rounded-full text-xs font-semibold">
+                        Avanzados
+                      </span>
+                      <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
+                        Expertos
                       </span>
                     </TableCell>
                   </TableRow>
                   <TableRow className="hover:bg-blue-50">
                     <TableCell className="font-bold text-gray-800">Miércoles</TableCell>
-                    <TableCell>10:00 - 12:00</TableCell>
-                    <TableCell>16:00 - 18:00</TableCell>
+                    <TableCell>18:00 - 19:30</TableCell>
                     <TableCell>
-                      <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Avanzado
+                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 mr-2 rounded-full text-xs font-semibold">
+                        Iniciantes
+                      </span>
+                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold">
+                        Avanzados
                       </span>
                     </TableCell>
                   </TableRow>
                   <TableRow className="hover:bg-blue-50">
                     <TableCell className="font-bold text-gray-800">Jueves</TableCell>
-                    <TableCell>10:00 - 12:00</TableCell>
-                    <TableCell>16:00 - 18:00</TableCell>
+                    <TableCell>18:00 - 19:30</TableCell>
                     <TableCell>
-                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Principiantes
+                      <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold">
+                        Todas las categorias
                       </span>
                     </TableCell>
                   </TableRow>
                   <TableRow className="hover:bg-blue-50">
                     <TableCell className="font-bold text-gray-800">Viernes</TableCell>
-                    <TableCell>10:00 - 12:00</TableCell>
-                    <TableCell>16:00 - 18:00</TableCell>
+                    <TableCell>18:00 - 19:30</TableCell>
                     <TableCell>
-                      <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Todos los niveles
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow className="hover:bg-blue-50">
-                    <TableCell className="font-bold text-gray-800">Sábado</TableCell>
-                    <TableCell>09:00 - 13:00</TableCell>
-                    <TableCell>15:00 - 19:00</TableCell>
-                    <TableCell>
-                      <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Todos los niveles
+                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold">
+                        Iniciantes
                       </span>
                     </TableCell>
                   </TableRow>
@@ -179,7 +175,7 @@ export default function Home() {
           <div className="mt-10 text-center animate-on-scroll">
             <Link href="/inscripcion">
               <Button className="bg-bmx-green hover:bg-bmx-green/80 text-white rounded-full text-lg">
-                ¡RESERVA TU LUGAR AHORA!
+                ¡RESERVÁ TU LUGAR AHORA!
               </Button>
             </Link>
           </div>
@@ -193,26 +189,37 @@ export default function Home() {
             GALERÍA <span className="text-bmx-orange">DE FOTOS</span>
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto animate-on-scroll">
-            Mira lo que hacemos en nuestras clases. ¡Tú también puedes ser parte de esto!
+            Mira lo que hacemos en nuestras clases. ¡Vos también podes ser parte!
           </p>
 
-          <div className="gallery-grid animate-on-scroll">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="gallery-item aspect-square">
-                <Image
-                  src={`/placeholder.svg?height=400&width=400&text=BMX+${item}`}
-                  alt={`BMX Freestyle imagen ${item}`}
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
+          <div className="flex flex-row flex-wrap">
+            {[foto1, foto2, foto3, foto4, foto5, foto6].map((foto, index) => (
+              <div 
+                key={index}
+                className="gallery-item aspect-square basis-1/3 flex-none p-1"
+              >
+                {/* Contenedor relativo para el recorte */}
+                <div className="relative w-full h-full overflow-hidden">
+                  <Image
+                    src={foto}
+                    alt={`BMX Freestyle imagen ${index + 1}`}
+                    width={1280}  // Ancho original de la imagen (ajustar)
+                    height={720}  // Alto original para 16:9 (ajustar)
+                    className="absolute object-cover object-center w-full h-full rounded-sm"
+                    style={{
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)"
+                    }}
+                  />
+                </div>
               </div>
             ))}
           </div>
-
+          
           <div className="mt-10 text-center animate-on-scroll">
             <Button variant="outline" className="border-bmx-orange text-bmx-orange hover:bg-bmx-orange/20 rounded-full">
-              VER MÁS FOTOS INCREÍBLES
+              VER MÁS FOTOS
             </Button>
           </div>
         </div>
@@ -222,7 +229,7 @@ export default function Home() {
       <section id="testimonios" className="w-full py-20 bg-bmx-blue/10">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-2 text-center animate-on-scroll section-title">
-            LO QUE DICEN <span className="text-bmx-blue">NUESTROS RIDERS</span>
+            QUE DICEN <span className="text-bmx-blue">NUESTROS ALUMNOS Y SUS PADRES</span>
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto animate-on-scroll">
             Nuestros alumnos son nuestra mejor carta de presentación. ¡Mira lo que opinan de nosotros!
@@ -231,21 +238,21 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                name: "Carlos, 12 años",
-                text: "¡Me encanta venir a ABBMX! Los profes son geniales y he aprendido un montón de trucos nuevos. ¡Es lo más divertido que hago en la semana!",
-                level: "Intermedio",
+                name: "Juanpe, 9 años",
+                text: "¡Me encanta venir a clases! Los profes son geniales y he aprendido un montón de trucos nuevos. ¡Es lo más divertido que hago en la semana!",
+                level: "Avanzados",
                 color: "bg-bmx-blue",
               },
               {
-                name: "Laura, 14 años",
-                text: "Al principio tenía miedo, pero los instructores me ayudaron mucho. Ahora puedo hacer trucos que nunca pensé que podría hacer. ¡Es increíble!",
-                level: "Principiante",
+                name: "Sofi, 11 años",
+                text: "Al principio tenía miedo, pero los instructores me ayudaron mucho. Ahora puedo hacer trucos que nunca pensé que podría hacer!",
+                level: "Iniciantes",
                 color: "bg-bmx-pink",
               },
               {
-                name: "Miguel, 16 años",
-                text: "Llevo 2 años en la escuela y es como mi segunda casa. He hecho muchos amigos y los profes siempre nos motivan a superarnos. ¡100% recomendado!",
-                level: "Avanzado",
+                name: "Gena, 13 años",
+                text: "Hace 2 años vengo a la escuela de bmx y es como mi segunda casa. Hice muchos amigos y los profes siempre nos motivan a superarnos.",
+                level: "Expertos",
                 color: "bg-bmx-green",
               },
             ].map((testimonial, index) => (
@@ -264,11 +271,6 @@ export default function Home() {
                       </div>
                     </div>
                     <p className="text-gray-700">{testimonial.text}</p>
-                    <div className="flex text-yellow-400">
-                      {"★★★★★".split("").map((star, i) => (
-                        <span key={i}>{star}</span>
-                      ))}
-                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -284,7 +286,7 @@ export default function Home() {
             ¿DÓNDE <span className="text-bmx-green">ESTAMOS?</span>
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto animate-on-scroll">
-            Ven a visitarnos y conoce nuestras instalaciones. ¡Te esperamos con los brazos abiertos!
+            Vení a visitarnos y conoce las pistas. ¡Te esperamos con los brazos abiertos!
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -309,7 +311,8 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="font-bold text-gray-800">Dirección</p>
-                        <p className="text-gray-600">Av. Principal 123, Ciudad</p>
+                        <p className="text-gray-600">Av. Alem 1200, Bahía Blanca</p>
+                        <p className="text-gray-600">Vieytes y Cuyo, Bahía Blanca</p>
                       </div>
                     </div>
 
@@ -319,17 +322,17 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="font-bold text-gray-800">Teléfono</p>
-                        <p className="text-gray-600">+123 456 7890</p>
+                        <p className="text-gray-600">+54 9 291 439-3572</p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-bmx-green/10 flex items-center justify-center">
-                        <Mail className="h-5 w-5 text-bmx-green" />
+                        <InstagramIcon className="h-5 w-5 text-bmx-green" />
                       </div>
                       <div>
-                        <p className="font-bold text-gray-800">Email</p>
-                        <p className="text-gray-600">info@abbmxfreestyle.com</p>
+                        <p className="font-bold text-gray-800">Instagram</p>
+                        <p className="text-gray-600">abbmxescuela</p>
                       </div>
                     </div>
 
@@ -338,8 +341,8 @@ export default function Home() {
                         <Clock className="h-5 w-5 text-bmx-orange" />
                       </div>
                       <div>
-                        <p className="font-bold text-gray-800">Horario de Atención</p>
-                        <p className="text-gray-600">Lunes a Sábado: 9:00 - 20:00</p>
+                        <p className="font-bold text-gray-800">Horario de clases</p>
+                        <p className="text-gray-600">Lunes a viernes: 18:00 - 19:30</p>
                       </div>
                     </div>
 
