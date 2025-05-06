@@ -3,10 +3,9 @@
 import { useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Youtube, ChevronDown, MessageCircle, InstagramIcon } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, ChevronDown, MessageCircle, MessageCircleMore, InstagramIcon } from "lucide-react"
 import foto1 from "../public/images/IMG_0810.jpeg"
 import foto2 from "../public/images/IMG_2999.jpeg"
 import foto3 from "../public/images/IMG_4506.jpeg"
@@ -77,16 +76,43 @@ export default function Home() {
             La escuela más divertida para aprender trucos increíbles
           </p> */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full text-lg">
+            <a
+              href="https://forms.gle/5SL5FkLzhyncnTb68"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                inline-flex items-center justify-center  // Centrado perfecto como un botón
+                bg-bmx-pink hover:bg-bmx-pink/80 
+                text-white rounded-full 
+                text-lg                                  // Tamaño de texto original
+                px-8 py-3                                // Padding típico de size='lg' (ajustar según necesidad)
+                font-semibold                            // Grosor de fuente común en botones
+                transition-all duration-300 
+                hover:scale-105                          // Efecto hover opcional
+                focus:outline-none focus:ring-2          // Estilos de focus accesibles
+                focus:ring-bmx-pink focus:ring-opacity-80
+                shadow-lg                                // Sombra similar a botones
+                hover:shadow-xl                          // Efecto hover de sombra
+              "
+            >
               ¡QUIERO INSCRIBIRME!
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-bmx-blue text-bmx-blue hover:bg-bmx-blue/20 rounded-full text-lg"
+            </a>
+            <a
+              href="#horarios"
+              className="
+                inline-flex items-center justify-center
+                border border-bmx-blue text-bmx-blue
+                hover:bg-bmx-blue/20
+                rounded-full text-lg
+                px-8 py-3
+                font-semibold
+                transition-all duration-300
+                focus:outline-none focus:ring-2
+                focus:ring-bmx-blue focus:ring-opacity-50
+              "
             >
               VER HORARIOS
-            </Button>
+            </a>
           </div>
 
           <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -173,11 +199,28 @@ export default function Home() {
           </div>
 
           <div className="mt-10 text-center animate-on-scroll">
-            <Link href="/inscripcion">
-              <Button className="bg-bmx-green hover:bg-bmx-green/80 text-white rounded-full text-lg">
-                ¡RESERVÁ TU LUGAR AHORA!
-              </Button>
-            </Link>
+            
+          <a
+            href="https://forms.gle/5SL5FkLzhyncnTb68" // Reemplaza con tu URL
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex items-center justify-center
+              bg-bmx-green hover:bg-bmx-green/80 
+              text-white rounded-full 
+              text-lg
+              px-8 py-3
+              font-semibold
+              transition-all duration-300
+              hover:scale-105
+              focus:outline-none focus:ring-2
+              focus:ring-bmx-green focus:ring-opacity-80
+              shadow-lg hover:shadow-xl
+            "
+          >
+            ¡RESERVÁ TU LUGAR AHORA!
+          </a>
+            
           </div>
         </div>
       </section>
@@ -218,9 +261,26 @@ export default function Home() {
           </div>
           
           <div className="mt-10 text-center animate-on-scroll">
-            <Button variant="outline" className="border-bmx-orange text-bmx-orange hover:bg-bmx-orange/20 rounded-full">
-              VER MÁS FOTOS
-            </Button>
+          <a
+            href="https://www.instagram.com/abbmxescuela?igsh=MXdjMDF4MTdoejA1aw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex items-center justify-center
+              border border-bmx-orange
+              text-bmx-orange
+              hover:bg-bmx-orange/20
+              rounded-full
+              px-5 py-3
+              font-medium
+              transition-all duration-300
+              hover:shadow-md
+              focus:outline-none focus:ring-2
+              focus:ring-bmx-orange focus:ring-opacity-50
+            "
+          >
+            VER MÁS FOTOS
+          </a>
           </div>
         </div>
       </section>
@@ -290,14 +350,35 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="animate-on-scroll">
-              <div className="h-[400px] bg-white rounded-2xl shadow-lg overflow-hidden">
-                {/* Aquí iría el mapa de Google Maps */}
-                <div className="w-full h-full flex items-center justify-center bg-gray-100 text-center p-4 rounded-2xl">
-                  <p className="text-gray-500">Mapa de Google Maps (Se requiere API Key para la integración)</p>
-                </div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+  {/* Mapa Parque de Mayo */}
+  <div className="animate-on-scroll">
+    <div className="h-[400px] bg-white rounded-2xl shadow-lg overflow-hidden">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d389.22728958810825!2d-62.27124697959446!3d-38.69901742923302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbb4fd306ad6d%3A0x813e6f97d0ef782f!2sBahia%20Blanca%20Skate%20Park%20Parque%20de%20Mayo!5e0!3m2!1ses!2sar!4v1746494985962!5m2!1ses!2sar"
+        className="w-full h-full border-0"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Mapa Parque de Mayo"
+      ></iframe>
+    </div>
+  </div>
+
+  {/* Mapa Skatepark Vieytes */}
+  <div className="animate-on-scroll">
+    <div className="h-[400px] bg-white rounded-2xl shadow-lg overflow-hidden">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1556.8233938963253!2d-62.29350400160522!3d-38.702957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbb0008763df3%3A0xa626446da37f5e0d!2sSkatepark%20Vieytes%20Bahia%20Blanca!5e0!3m2!1ses!2sar!4v1746495009153!5m2!1ses!2sar"
+        className="w-full h-full border-0"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Mapa Skatepark Vieytes"
+      ></iframe>
+    </div>
+  </div>
+</div>
 
             <div className="animate-on-scroll">
               <Card className="bg-white border-none shadow-lg rounded-2xl h-full">
@@ -311,28 +392,60 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="font-bold text-gray-800">Dirección</p>
-                        <p className="text-gray-600">Av. Alem 1200, Bahía Blanca</p>
-                        <p className="text-gray-600">Vieytes y Cuyo, Bahía Blanca</p>
+                        <p className="text-gray-600">Av. Alem 1200 - Sede principal</p>
+                        <p className="text-gray-600">Vieytes y Av. Buenos Aires</p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full bg-bmx-pink/10 flex items-center justify-center">
-                        <Phone className="h-5 w-5 text-bmx-pink" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-gray-800">Teléfono</p>
-                        <p className="text-gray-600">+54 9 291 439-3572</p>
-                      </div>
+  <div className="w-10 h-10 rounded-full bg-bmx-pink/10 flex items-center justify-center">
+    <Phone className="h-5 w-5 text-bmx-pink" />
+  </div>
+  <div>
+    <p className="font-bold text-gray-800">Teléfono</p>
+    <a 
+      href="tel:+5492914393572"
+      className="text-gray-600 hover:text-bmx-blue transition-colors duration-200"
+      aria-label="Llamar al +54 9 291 439-3572"
+    >
+      +54 9 291 439-3572
+    </a>
+  </div>
                     </div>
 
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-bmx-green/10 flex items-center justify-center">
-                        <InstagramIcon className="h-5 w-5 text-bmx-green" />
+                        <MessageCircleMore className="h-5 w-5 text-bmx-green" />
                       </div>
                       <div>
-                        <p className="font-bold text-gray-800">Instagram</p>
-                        <p className="text-gray-600">abbmxescuela</p>
+                        <p className="font-bold text-gray-800">Whatsapp</p>
+                        <a
+                          href="https://wa.link/zwm5na"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 hover:text-bmx-green transition-colors duration-200"
+                          aria-label="Enviar mensaje por WhatsApp"
+                        >
+                          Enviar consulta!
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-bmx-blue/10 flex items-center justify-center">
+                        <InstagramIcon className="h-5 w-5 text-bmx-blue" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-blue">Instagram</p>
+                        <a
+                          href="https://www.instagram.com/abbmxescuela?igsh=MXdjMDF4MTdoejA1aw=="
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 hover:text-bmx-blue transition-colors duration-200"
+                          aria-label="Visitar perfil de Instagram"
+                        >
+                          @abbmxescuela
+                        </a>
                       </div>
                     </div>
 
@@ -346,29 +459,6 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex gap-4 mt-6">
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="rounded-full border-bmx-blue text-bmx-blue hover:bg-bmx-blue/10"
-                      >
-                        <Instagram className="h-5 w-5" />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="rounded-full border-bmx-pink text-bmx-pink hover:bg-bmx-pink/10"
-                      >
-                        <Facebook className="h-5 w-5" />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="rounded-full border-bmx-orange text-bmx-orange hover:bg-bmx-orange/10"
-                      >
-                        <Youtube className="h-5 w-5" />
-                      </Button>
-                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -380,14 +470,30 @@ export default function Home() {
       {/* CTA Section */}
       <section className="w-full py-16 bg-gradient-to-r from-bmx-blue to-bmx-pink">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">¿LISTO PARA LA AVENTURA?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">¿LISTO PARA ANDAR EN BICI?</h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            No esperes más para unirte a la comunidad BMX más divertida. ¡Inscríbete ahora y comienza a vivir la
-            experiencia!
+            No esperes más para sumarte a las clases BMX. ¡Inscribite ahora y empezá a pedalear!
           </p>
-          <Button size="lg" className="bg-white text-bmx-pink hover:bg-white/90 rounded-full text-lg font-bold px-8">
+          <a
+            href="https://forms.gle/5SL5FkLzhyncnTb68"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex items-center justify-center
+              bg-white text-bmx-pink
+              hover:bg-white/90
+              rounded-full text-lg
+              font-bold
+              px-8 py-4
+              transition-all duration-300
+              shadow-md hover:shadow-lg
+              border-2 border-transparent
+              focus:outline-none focus:ring-2
+              focus:ring-bmx-pink focus:ring-opacity-50
+            "
+          >
             ¡QUIERO SER PARTE DE ABBMX!
-          </Button>
+          </a>
         </div>
       </section>
 
@@ -401,15 +507,15 @@ export default function Home() {
 
             <div className="text-center md:text-right">
               <p className="text-gray-600 mb-2">
-                © {new Date().getFullYear()} ABBMX Freestyle. ¡Todos los derechos reservados!
+                © {new Date().getFullYear()} ABBMX Freestyle. Todos los derechos reservados.
               </p>
               <div className="flex gap-4 justify-center md:justify-end">
-                <Link href="/terminos" className="text-sm text-gray-500 hover:text-bmx-blue">
+                <p className="text-sm text-gray-500 hover:text-bmx-blue">
                   Términos y Condiciones
-                </Link>
-                <Link href="/privacidad" className="text-sm text-gray-500 hover:text-bmx-blue">
+                </p>
+                <p className="text-sm text-gray-500 hover:text-bmx-blue">
                   Política de Privacidad
-                </Link>
+                </p>
               </div>
             </div>
           </div>

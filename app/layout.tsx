@@ -12,8 +12,8 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  title: "v0 - 1.0 - ABBMX Freestyle - Escuela de BMX",
-  description: "¡Aprende BMX Freestyle y diviértete! Clases para todos los niveles y edades.",
+  title: "ABBMX Freestyle - Escuela de BMX",
+  description: "¡Aprendé BMX Freestyle y divertite! Clases para todos los niveles y edades.",
   keywords: "BMX, Freestyle, escuela, clases, bicicleta, deporte extremo, niños, adolescentes",
 }
 
