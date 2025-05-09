@@ -78,20 +78,14 @@
   z-index: -1;
 }
 
-.gallery-grid {
-
-  gap: 1rem;
-}
-
-.gallery-item {
+.gallery-card {
+  position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.gallery-item:hover {
-  transform: scale(1.05);
+.gallery-card:hover {
+  transform: translateY(-5px);
 }
 
 .whatsapp-button {

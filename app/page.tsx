@@ -1,20 +1,23 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Phone, Mail, MapPin, Clock, ChevronDown, MessageCircle, MessageCircleMore, InstagramIcon } from "lucide-react"
+import { Phone, MapPin, Clock, ChevronDown, InstagramIcon } from "lucide-react"
 import foto1 from "../public/images/IMG_0810.jpeg"
 import foto2 from "../public/images/IMG_2999.jpeg"
 import foto3 from "../public/images/IMG_4506.jpeg"
 import foto4 from "../public/images/IMG_4936.jpeg"
 import foto5 from "../public/images/IMG_6412.jpeg"
 import foto6 from "../public/images/IMG_8794.jpeg"
+import Lightbox from "@/components/lightbox"
 
 export default function Home() {
   const animatedElementsRef = useRef<HTMLElement[]>([])
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const galleryImages = [foto1, foto2, foto3, foto4, foto5, foto6]
 
   useEffect(() => {
     // Intersection Observer para animaciones al hacer scroll
@@ -55,7 +58,7 @@ export default function Home() {
         <div className="hero-overlay"></div>
 
         <div className="container mx-auto px-4 z-10 text-center">
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-8 mt-20 sm:mt-8">
             <div className="relative">
               <Image
                 src="/images/logo.png"
@@ -64,7 +67,7 @@ export default function Home() {
                 height={200}
                 className="animate-float"
               />
-              <div className="absolute -top-5 -right-5 bg-bmx-pink text-white text-sm font-bold px-3 py-1 rounded-full rotate-12 animate-pulse">
+              <div className="absolute -top-16 right-0 bg-gradient-to-r from-bmx-pink to-bmx-blue text-white text-sm font-bold px-4 py-2 rounded-full rotate-6 animate-pulse shadow-lg">
                 ¡Inscripciones abiertas!
               </div>
             </div>
@@ -115,7 +118,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block z-10">
             <ChevronDown className="h-10 w-10 text-gray-800" />
           </div>
         </div>
@@ -131,80 +134,81 @@ export default function Home() {
             Elige el horario que más te guste y ven a divertirte con nosotros. ¡Tenemos clases para todos los niveles!
           </p> */}
 
-          <div className="overflow-x-auto animate-on-scroll">
-            <div className="bg-white rounded-2xl shadow-lg p-6 overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="text-bmx-blue font-bold text-lg">Día</TableHead>
-                    <TableHead className="text-bmx-blue font-bold text-lg">Horario</TableHead>
-                    <TableHead className="text-bmx-blue font-bold text-lg">Nivel</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow className="hover:bg-blue-50">
-                    <TableCell className="font-bold text-gray-800">Lunes</TableCell>
-                    <TableCell>16:00 - 18:00</TableCell>
-                    <TableCell>
-                      <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Expertos
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow className="hover:bg-blue-50">
-                    <TableCell className="font-bold text-gray-800">Martes</TableCell>
-                    <TableCell>18:00 - 19:30</TableCell>
-                    <TableCell>
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 mr-2 rounded-full text-xs font-semibold">
-                        Avanzados
-                      </span>
-                      <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Expertos
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow className="hover:bg-blue-50">
-                    <TableCell className="font-bold text-gray-800">Miércoles</TableCell>
-                    <TableCell>18:00 - 19:30</TableCell>
-                    <TableCell>
-                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 mr-2 rounded-full text-xs font-semibold">
-                        Iniciantes
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Avanzados
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow className="hover:bg-blue-50">
-                    <TableCell className="font-bold text-gray-800">Jueves</TableCell>
-                    <TableCell>18:00 - 19:30</TableCell>
-                    <TableCell>
-                      <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Todas las categorias
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow className="hover:bg-blue-50">
-                    <TableCell className="font-bold text-gray-800">Viernes</TableCell>
-                    <TableCell>18:00 - 19:30</TableCell>
-                    <TableCell>
-                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        Iniciantes
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+          <div className="flex justify-center animate-on-scroll">
+            <div className="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-6 overflow-hidden">
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="text-bmx-blue font-bold text-lg">Día</TableHead>
+                      <TableHead className="text-bmx-blue font-bold text-lg">Horario</TableHead>
+                      <TableHead className="text-bmx-blue font-bold text-lg">Nivel</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow className="hover:bg-blue-50">
+                      <TableCell className="font-bold text-gray-800">Lunes</TableCell>
+                      <TableCell>16:00 - 18:00</TableCell>
+                      <TableCell>
+                        <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
+                          Expertos
+                        </span>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-blue-50">
+                      <TableCell className="font-bold text-gray-800">Martes</TableCell>
+                      <TableCell>18:00 - 19:30</TableCell>
+                      <TableCell>
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 mr-2 rounded-full text-xs font-semibold">
+                          Avanzados
+                        </span>
+                        <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
+                          Expertos
+                        </span>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-blue-50">
+                      <TableCell className="font-bold text-gray-800">Miércoles</TableCell>
+                      <TableCell>18:00 - 19:30</TableCell>
+                      <TableCell>
+                        <span className="bg-yellow-100 text-yellow-800 px-2 py-1 mr-2 rounded-full text-xs font-semibold">
+                          Iniciantes
+                        </span>
+                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold">
+                          Avanzados
+                        </span>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-blue-50">
+                      <TableCell className="font-bold text-gray-800">Jueves</TableCell>
+                      <TableCell>18:00 - 19:30</TableCell>
+                      <TableCell>
+                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold">
+                          Todas las categorias
+                        </span>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow className="hover:bg-blue-50">
+                      <TableCell className="font-bold text-gray-800">Viernes</TableCell>
+                      <TableCell>18:00 - 19:30</TableCell>
+                      <TableCell>
+                        <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold">
+                          Iniciantes
+                        </span>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
             </div>
           </div>
 
           <div className="mt-10 text-center animate-on-scroll">
-            
-          <a
-            href="https://forms.gle/5SL5FkLzhyncnTb68" // Reemplaza con tu URL
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
+            <a
+              href="https://forms.gle/5SL5FkLzhyncnTb68" // Reemplaza con tu URL
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
               inline-flex items-center justify-center
               bg-bmx-green hover:bg-bmx-green/80 
               text-white rounded-full 
@@ -217,10 +221,9 @@ export default function Home() {
               focus:ring-bmx-green focus:ring-opacity-80
               shadow-lg hover:shadow-xl
             "
-          >
-            ¡RESERVÁ TU LUGAR AHORA!
-          </a>
-            
+            >
+              ¡RESERVÁ TU LUGAR AHORA!
+            </a>
           </div>
         </div>
       </section>
@@ -235,37 +238,46 @@ export default function Home() {
             Mira lo que hacemos en nuestras clases. ¡Vos también podes ser parte!
           </p>
 
-          <div className="flex flex-row flex-wrap">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {[foto1, foto2, foto3, foto4, foto5, foto6].map((foto, index) => (
-              <div 
+              <div
                 key={index}
-                className="gallery-item aspect-square basis-1/3 flex-none p-1"
+                className="gallery-card"
+                onClick={() => {
+                  setCurrentImageIndex(index)
+                  setLightboxOpen(true)
+                }}
               >
-                {/* Contenedor relativo para el recorte */}
-                <div className="relative w-full h-full overflow-hidden">
+                <div className="relative overflow-hidden rounded-xl shadow-md h-64 sm:h-72 md:h-80 cursor-pointer transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
                   <Image
-                    src={foto}
+                    src={foto || "/placeholder.svg"}
                     alt={`BMX Freestyle imagen ${index + 1}`}
-                    width={1280}  // Ancho original de la imagen (ajustar)
-                    height={720}  // Alto original para 16:9 (ajustar)
-                    className="absolute object-cover object-center w-full h-full rounded-sm"
-                    style={{
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)"
-                    }}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                    className="object-cover object-center transition-transform duration-500 hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                    <span className="text-white font-medium">Ver imagen</span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          
+
+          {lightboxOpen && (
+            <Lightbox
+              images={galleryImages.map((img) => img.src)}
+              initialIndex={currentImageIndex}
+              onClose={() => setLightboxOpen(false)}
+            />
+          )}
+
           <div className="mt-10 text-center animate-on-scroll">
-          <a
-            href="https://www.instagram.com/abbmxescuela?igsh=MXdjMDF4MTdoejA1aw=="
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
+            <a
+              href="https://www.instagram.com/abbmxescuela?igsh=MXdjMDF4MTdoejA1aw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
               inline-flex items-center justify-center
               border border-bmx-orange
               text-bmx-orange
@@ -278,9 +290,9 @@ export default function Home() {
               focus:outline-none focus:ring-2
               focus:ring-bmx-orange focus:ring-opacity-50
             "
-          >
-            VER MÁS FOTOS
-          </a>
+            >
+              VER MÁS FOTOS
+            </a>
           </div>
         </div>
       </section>
@@ -350,35 +362,35 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-  {/* Mapa Parque de Mayo */}
-  <div className="animate-on-scroll">
-    <div className="h-[400px] bg-white rounded-2xl shadow-lg overflow-hidden">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d389.22728958810825!2d-62.27124697959446!3d-38.69901742923302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbb4fd306ad6d%3A0x813e6f97d0ef782f!2sBahia%20Blanca%20Skate%20Park%20Parque%20de%20Mayo!5e0!3m2!1ses!2sar!4v1746494985962!5m2!1ses!2sar"
-        className="w-full h-full border-0"
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Mapa Parque de Mayo"
-      ></iframe>
-    </div>
-  </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              {/* Mapa Parque de Mayo */}
+              <div className="animate-on-scroll">
+                <div className="h-[400px] bg-white rounded-2xl shadow-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d389.22728958810825!2d-62.27124697959446!3d-38.69901742923302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbb4fd306ad6d%3A0x813e6f97d0ef782f!2sBahia%20Blanca%20Skate%20Park%20Parque%20de%20Mayo!5e0!3m2!1ses!2sar!4v1746494985962!5m2!1ses!2sar"
+                    className="w-full h-full border-0"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Mapa Parque de Mayo"
+                  ></iframe>
+                </div>
+              </div>
 
-  {/* Mapa Skatepark Vieytes */}
-  <div className="animate-on-scroll">
-    <div className="h-[400px] bg-white rounded-2xl shadow-lg overflow-hidden">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1556.8233938963253!2d-62.29350400160522!3d-38.702957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbb0008763df3%3A0xa626446da37f5e0d!2sSkatepark%20Vieytes%20Bahia%20Blanca!5e0!3m2!1ses!2sar!4v1746495009153!5m2!1ses!2sar"
-        className="w-full h-full border-0"
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Mapa Skatepark Vieytes"
-      ></iframe>
-    </div>
-  </div>
-</div>
+              {/* Mapa Skatepark Vieytes */}
+              <div className="animate-on-scroll">
+                <div className="h-[400px] bg-white rounded-2xl shadow-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1556.8233938963253!2d-62.29350400160522!3d-38.702957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbb0008763df3%3A0xa626446da37f5e0d!2sSkatepark%20Vieytes%20Bahia%20Blanca!5e0!3m2!1ses!2sar!4v1746495009153!5m2!1ses!2sar"
+                    className="w-full h-full border-0"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Mapa Skatepark Vieytes"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
 
             <div className="animate-on-scroll">
               <Card className="bg-white border-none shadow-lg rounded-2xl h-full">
@@ -398,24 +410,38 @@ export default function Home() {
                     </div>
 
                     <div className="flex items-center gap-4">
-  <div className="w-10 h-10 rounded-full bg-bmx-pink/10 flex items-center justify-center">
-    <Phone className="h-5 w-5 text-bmx-pink" />
-  </div>
-  <div>
-    <p className="font-bold text-gray-800">Teléfono</p>
-    <a 
-      href="tel:+5492914393572"
-      className="text-gray-600 hover:text-bmx-blue transition-colors duration-200"
-      aria-label="Llamar al +54 9 291 439-3572"
-    >
-      +54 9 291 439-3572
-    </a>
-  </div>
+                      <div className="w-10 h-10 rounded-full bg-bmx-pink/10 flex items-center justify-center">
+                        <Phone className="h-5 w-5 text-bmx-pink" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-800">Teléfono</p>
+                        <a
+                          href="tel:+5492914393572"
+                          className="text-gray-600 hover:text-bmx-blue transition-colors duration-200"
+                          aria-label="Llamar al +54 9 291 439-3572"
+                        >
+                          +54 9 291 439-3572
+                        </a>
+                      </div>
                     </div>
 
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-bmx-green/10 flex items-center justify-center">
-                        <MessageCircleMore className="h-5 w-5 text-bmx-green" />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-5 w-5 text-bmx-green"
+                        >
+                          <path d="M17.6 6.8A7.8 7.8 0 0 0 12 4c-4.4 0-8 3.6-8 8 0 1.4.4 2.8 1 4l-1 3 3.2-.8c1.2.6 2.5 1 3.8 1 4.4 0 8-3.6 8-8 0-2.2-.8-4.2-2.4-5.8z" />
+                          <path d="m12 17-1.2-1.2a1 1 0 0 0-1.4 0L8 17l-1.8-.7c-.5-.2-.7-.8-.5-1.3l.5-1c.2-.5 0-1-.4-1.2l-1.3-.6c-.5-.2-.8-.8-.6-1.3l1-2A7 7 0 0 1 12 5a7 7 0 0 1 7 7 7 7 0 0 1-7 7v-2z" />
+                        </svg>
                       </div>
                       <div>
                         <p className="font-bold text-gray-800">Whatsapp</p>
@@ -458,7 +484,6 @@ export default function Home() {
                         <p className="text-gray-600">Lunes a viernes: 18:00 - 19:30</p>
                       </div>
                     </div>
-
                   </div>
                 </CardContent>
               </Card>
@@ -510,12 +535,8 @@ export default function Home() {
                 © {new Date().getFullYear()} ABBMX Freestyle. Todos los derechos reservados.
               </p>
               <div className="flex gap-4 justify-center md:justify-end">
-                <p className="text-sm text-gray-500 hover:text-bmx-blue">
-                  Términos y Condiciones
-                </p>
-                <p className="text-sm text-gray-500 hover:text-bmx-blue">
-                  Política de Privacidad
-                </p>
+                <p className="text-sm text-gray-500 hover:text-bmx-blue">Términos y Condiciones</p>
+                <p className="text-sm text-gray-500 hover:text-bmx-blue">Política de Privacidad</p>
               </div>
             </div>
           </div>
@@ -524,12 +545,26 @@ export default function Home() {
 
       {/* Botón de WhatsApp flotante */}
       <a
-        href="https://wa.me/123456789?text=Hola,%20me%20interesa%20información%20sobre%20las%20clases%20de%20BMX"
+        href="https://wa.link/zwm5na"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-button bg-[#25D366] text-white p-3 rounded-full shadow-lg"
       >
-        <MessageCircle className="h-6 w-6" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-6 w-6"
+        >
+          <path d="M17.6 6.8A7.8 7.8 0 0 0 12 4c-4.4 0-8 3.6-8 8 0 1.4.4 2.8 1 4l-1 3 3.2-.8c1.2.6 2.5 1 3.8 1 4.4 0 8-3.6 8-8 0-2.2-.8-4.2-2.4-5.8z" />
+          <path d="m12 17-1.2-1.2a1 1 0 0 0-1.4 0L8 17l-1.8-.7c-.5-.2-.7-.8-.5-1.3l.5-1c.2-.5 0-1-.4-1.2l-1.3-.6c-.5-.2-.8-.8-.6-1.3l1-2A7 7 0 0 1 12 5a7 7 0 0 1 7 7 7 7 0 0 1-7 7v-2z" />
+        </svg>
       </a>
     </main>
   )
