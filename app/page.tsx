@@ -148,53 +148,63 @@ export default function Home() {
                   <TableBody>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Lunes</TableCell>
-                      <TableCell>16:00 - 18:00</TableCell>
+                      <TableCell>18:00 - 19:30</TableCell>
                       <TableCell>
-                        <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
-                          Expertos
-                        </span>
+                        <div className="flex flex-col sm:flex-row gap-2">
+                          <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
+                            Expertos
+                          </span>
+                        </div>
                       </TableCell>
                     </TableRow>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Martes</TableCell>
                       <TableCell>18:00 - 19:30</TableCell>
                       <TableCell>
-                        <span className="bg-blue-100 text-blue-800 px-2 py-1 mr-2 rounded-full text-xs font-semibold">
-                          Avanzados
-                        </span>
-                        <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold">
-                          Expertos
-                        </span>
+                        <div className="flex flex-col sm:flex-row gap-2">
+                          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
+                            Avanzados
+                          </span>
+                          <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
+                            Expertos
+                          </span>
+                        </div>
                       </TableCell>
                     </TableRow>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Miércoles</TableCell>
                       <TableCell>18:00 - 19:30</TableCell>
                       <TableCell>
-                        <span className="bg-yellow-100 text-yellow-800 px-2 py-1 mr-2 rounded-full text-xs font-semibold">
-                          Iniciantes
-                        </span>
-                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold">
-                          Avanzados
-                        </span>
+                        <div className="flex flex-col sm:flex-row gap-2">
+                          <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
+                            Iniciantes
+                          </span>
+                          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
+                            Avanzados
+                          </span>
+                        </div>
                       </TableCell>
                     </TableRow>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Jueves</TableCell>
                       <TableCell>18:00 - 19:30</TableCell>
                       <TableCell>
-                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold">
-                          Todas las categorias
-                        </span>
+                        <div className="flex flex-col sm:flex-row gap-2">
+                          <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
+                            Todas las categorias
+                          </span>
+                        </div>
                       </TableCell>
                     </TableRow>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Viernes</TableCell>
                       <TableCell>18:00 - 19:30</TableCell>
                       <TableCell>
-                        <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold">
-                          Iniciantes
-                        </span>
+                        <div className="flex flex-col sm:flex-row gap-2">
+                          <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
+                            Iniciantes
+                          </span>
+                        </div>
                       </TableCell>
                     </TableRow>
                   </TableBody>
