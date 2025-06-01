@@ -414,8 +414,8 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="font-bold text-gray-800">Dirección</p>
-                        <p className="text-gray-600">Av. Alem 1200 - Sede principal</p>
-                        <p className="text-gray-600">Vieytes y Av. Buenos Aires</p>
+                        <p className="text-gray-600">Av. Alem 1400 - Sede principal</p>
+                        <p className="text-gray-600">Vieytes y Av. Buenos Aires - 17 de Mayo</p>
                       </div>
                     </div>
 
