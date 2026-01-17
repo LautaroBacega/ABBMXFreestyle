@@ -24,34 +24,24 @@ Este proyecto es una landing page divertida y juvenil para una escuela de BMX Fr
 ## Requisitos previos
 
 - Node.js 18.0 o superior
-- npm o yarn
+- npm
 
 ## Instalación
 
 1. Clona este repositorio:
-\`\`\`bash
 git clone https://github.com/tu-usuario/abbmx-freestyle-landing.git
 cd abbmx-freestyle-landing
-\`\`\`
 
 2. Instala las dependencias:
-\`\`\`bash
 npm install
-# o
-yarn install
-\`\`\`
 
 3. Crea un archivo `.env.local` en la raíz del proyecto y añade tu API key de Google Maps:
-\`\`\`
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=tu_api_key_aquí
-\`\`\`
+
 
 4. Inicia el servidor de desarrollo:
-\`\`\`bash
 npm run dev
-# o
-yarn dev
-\`\`\`
+
 
 5. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
 
@@ -60,30 +50,15 @@ yarn dev
 Para desplegar la aplicación en producción:
 
 1. Construye la aplicación:
-\`\`\`bash
 npm run build
-# o
-yarn build
-\`\`\`
 
 2. Inicia el servidor de producción:
-\`\`\`bash
 npm start
-# o
-yarn start
-\`\`\`
 
-También puedes desplegar fácilmente en Vercel:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftu-usuario%2Fabbmx-freestyle-landing)
+## Autor
 
-## Personalización
-
-- Modifica los colores en `tailwind.config.js`
-- Actualiza el contenido en `app/page.tsx`
-- Añade tus propias imágenes en la carpeta `public/images`
-- Personaliza los componentes en la carpeta `components`
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT.
+**Lautaro Bacega**
+- GitHub: https://github.com/LautaroBacega
+- LinkedIn: https://www.linkedin.com/in/lautaro-bacega/
+- Email: lautibacega@gmail.com
