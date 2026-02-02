@@ -124,6 +124,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Campeonato Argentino de BMX Freestyle Section */}
+      <section className="w-full py-20 bg-gradient-to-r from-bmx-pink/10 to-bmx-blue/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center animate-on-scroll">
+            <h2 className="text-4xl font-bold mb-6 text-center section-title">
+              CAMPEONATO ARGENTINO DE <span className="text-bmx-blue">BMX FREESTYLE</span>
+            </h2>
+            <p className="text-lg text-gray-700 mb-10">
+              ¡Demostrá tus habilidades! Participá en el campeonato argentino y competí con los mejores riders del país. 
+              Inscribite ahora y sé parte de esta experiencia increíble.
+            </p>
+            <a
+              href="https://forms.gle/Yo7GNU2AsBqVdUA27"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                inline-flex items-center justify-center
+                bg-gradient-to-r from-bmx-pink to-bmx-blue
+                hover:from-bmx-pink/80 hover:to-bmx-blue/80
+                text-white rounded-full 
+                text-lg
+                px-10 py-4
+                font-bold
+                transition-all duration-300 
+                hover:scale-105
+                focus:outline-none focus:ring-2
+                focus:ring-bmx-blue focus:ring-opacity-80
+                shadow-xl
+                hover:shadow-2xl
+              "
+            >
+              INSCRIBIRSE AL CAMPEONATO
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Horarios Section */}
       <section id="horarios" className="w-full py-20 bg-white bg-dots">
         <div className="container mx-auto px-4">
@@ -151,6 +188,9 @@ export default function Home() {
                       <TableCell>18:00 - 19:30</TableCell>
                       <TableCell>
                         <div className="flex flex-col sm:flex-row gap-2">
+                          <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
+                            Iniciantes
+                          </span>
                           <span className="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
                             Expertos
                           </span>
@@ -176,9 +216,6 @@ export default function Home() {
                       <TableCell>18:00 - 19:30</TableCell>
                       <TableCell>
                         <div className="flex flex-col sm:flex-row gap-2">
-                          <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
-                            Iniciantes
-                          </span>
                           <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
                             Avanzados
                           </span>
@@ -558,23 +595,15 @@ export default function Home() {
         href="https://wa.link/zwm5na"
         target="_blank"
         rel="noopener noreferrer"
-        className="whatsapp-button bg-[#25D366] text-white p-3 rounded-full shadow-lg"
+        className="whatsapp-button bg-[#25D366] text-white p-2 rounded-full shadow-lg hover:bg-[#20ba5a] transition-colors flex items-center justify-center"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-6 w-6"
-        >
-          <path d="M17.6 6.8A7.8 7.8 0 0 0 12 4c-4.4 0-8 3.6-8 8 0 1.4.4 2.8 1 4l-1 3 3.2-.8c1.2.6 2.5 1 3.8 1 4.4 0 8-3.6 8-8 0-2.2-.8-4.2-2.4-5.8z" />
-          <path d="m12 17-1.2-1.2a1 1 0 0 0-1.4 0L8 17l-1.8-.7c-.5-.2-.7-.8-.5-1.3l.5-1c.2-.5 0-1-.4-1.2l-1.3-.6c-.5-.2-.8-.8-.6-1.3l1-2A7 7 0 0 1 12 5a7 7 0 0 1 7 7 7 7 0 0 1-7 7v-2z" />
-        </svg>
+        <Image
+          src="/images/icons8-whatsapp.svg"
+          alt="WhatsApp"
+          width={32}
+          height={32}
+          className="w-8 h-8"
+        />
       </a>
     </main>
   )
