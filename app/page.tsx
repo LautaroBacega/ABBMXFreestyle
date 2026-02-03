@@ -69,7 +69,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center">
       {/* Hero Section con video de fondo */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-        <video autoPlay muted loop playsInline className="hero-video">
+        <video autoPlay muted loop playsInline className="hero-video hidden sm:block">
           <source
             src="https://assets.mixkit.co/videos/preview/mixkit-bmx-rider-doing-a-trick-on-a-ramp-32807-large.mp4"
             type="video/mp4"
