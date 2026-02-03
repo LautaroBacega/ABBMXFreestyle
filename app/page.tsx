@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Phone, MapPin, Clock, ChevronDown, InstagramIcon } from "lucide-react"
+import { useEffect } from "react"
 import foto1 from "../public/images/IMG_0810.jpeg"
 import foto2 from "../public/images/IMG_2999.jpeg"
 import foto3 from "../public/images/IMG_4506.jpeg"
@@ -41,6 +42,27 @@ export default function Home() {
 
     return () => {
       elements.forEach((el) => observer.unobserve(el))
+    }
+  }, [])
+
+  // Intentar forzar la reproducción del video en cliente para evitar
+  // que el navegador muestre el botón de "play" en móviles cuando
+  // la reproducción automática se bloquee.
+  useEffect(() => {
+    const video = document.querySelector('.hero-video') as HTMLVideoElement | null
+    if (video) {
+      try {
+        video.playsInline = true
+        video.muted = true
+        const playPromise = video.play()
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(() => {
+            // Ignorar error si el navegador bloquea la reproducción
+          })
+        }
+      } catch (e) {
+        // Ignorar cualquier error de reproducción
+      }
     }
   }, [])
 
