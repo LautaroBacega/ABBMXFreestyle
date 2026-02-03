@@ -80,7 +80,7 @@ export default function Home() {
           </p> */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://forms.gle/5SL5FkLzhyncnTb68"
+              href="https://forms.gle/ks8rqw71n6CspcYE9"
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -185,7 +185,7 @@ export default function Home() {
                   <TableBody>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Lunes</TableCell>
-                      <TableCell>18:00 - 19:30</TableCell>
+                      <TableCell>19:00 - 20:30</TableCell>
                       <TableCell>
                         <div className="flex flex-col sm:flex-row gap-2">
                           <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
@@ -199,7 +199,7 @@ export default function Home() {
                     </TableRow>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Martes</TableCell>
-                      <TableCell>18:00 - 19:30</TableCell>
+                      <TableCell>19:00 - 20:30</TableCell>
                       <TableCell>
                         <div className="flex flex-col sm:flex-row gap-2">
                           <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
@@ -213,7 +213,7 @@ export default function Home() {
                     </TableRow>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Miércoles</TableCell>
-                      <TableCell>18:00 - 19:30</TableCell>
+                      <TableCell>19:00 - 20:30</TableCell>
                       <TableCell>
                         <div className="flex flex-col sm:flex-row gap-2">
                           <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
@@ -224,7 +224,7 @@ export default function Home() {
                     </TableRow>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Jueves</TableCell>
-                      <TableCell>18:00 - 19:30</TableCell>
+                      <TableCell>19:00 - 20:30</TableCell>
                       <TableCell>
                         <div className="flex flex-col sm:flex-row gap-2">
                           <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
@@ -235,7 +235,7 @@ export default function Home() {
                     </TableRow>
                     <TableRow className="hover:bg-blue-50">
                       <TableCell className="font-bold text-gray-800">Viernes</TableCell>
-                      <TableCell>18:00 - 19:30</TableCell>
+                      <TableCell>19:00 - 20:30</TableCell>
                       <TableCell>
                         <div className="flex flex-col sm:flex-row gap-2">
                           <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold inline-block text-center">
@@ -252,7 +252,7 @@ export default function Home() {
 
           <div className="mt-10 text-center animate-on-scroll">
             <a
-              href="https://forms.gle/5SL5FkLzhyncnTb68" // Reemplaza con tu URL
+              href="https://forms.gle/ks8rqw71n6CspcYE9" 
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -547,7 +547,7 @@ export default function Home() {
             No esperes más para sumarte a las clases BMX. ¡Inscribite ahora y empezá a pedalear!
           </p>
           <a
-            href="https://forms.gle/5SL5FkLzhyncnTb68"
+            href="https://forms.gle/ks8rqw71n6CspcYE9"
             target="_blank"
             rel="noopener noreferrer"
             className="

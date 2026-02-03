@@ -56,7 +56,7 @@ export default function Navbar() {
               Contacto
             </Link>
             <a
-              href="https://forms.gle/5SL5FkLzhyncnTb68"
+              href="https://forms.gle/ks8rqw71n6CspcYE9"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full px-6 py-3 transition-all duration-300"
@@ -105,7 +105,7 @@ export default function Navbar() {
               Contacto
             </Link>
             <a
-              href="https://forms.gle/5SL5FkLzhyncnTb68"
+              href="https://forms.gle/ks8rqw71n6CspcYE9"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full px-6 py-3 transition-all duration-300"
