@@ -74,8 +74,20 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
-          <nav className="flex flex-col items-center py-8 space-y-6">
+        <div
+          className="md:hidden fixed top-0 left-0 w-full bg-white shadow-lg z-40"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <nav className="flex flex-col items-center pt-16 pb-8 space-y-6" onClick={(e) => e.stopPropagation()}>
+            <div className="absolute top-3 right-4">
+              <button
+                aria-label="Cerrar menú"
+                className="p-2 rounded-md text-gray-800 hover:bg-gray-100"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
             <Link
               href="#horarios"
               className="text-gray-800 hover:text-bmx-blue font-medium transition-colors"
