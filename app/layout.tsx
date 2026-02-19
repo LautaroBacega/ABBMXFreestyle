@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "ABBMX Freestyle - Escuela de BMX",
   description: "¡Aprendé BMX Freestyle y divertite! Clases para todos los niveles y edades.",
   keywords: "BMX, Freestyle, escuela, clases, bicicleta, deporte extremo, niños, adolescentes",
+  icons: {
+    icon: "/images/logo.png",
+  },
 }
 
 export default function RootLayout({
@@ -24,6 +27,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              const favicon = document.querySelector('link[rel="icon"]');
+              if (favicon) {
+                favicon.style.filter = 'brightness(0) invert(1)';
+              }
+            `,
+          }}
+        />
+      </head>
       <body className={`${outfit.variable} font-sans bg-white`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Navbar />
