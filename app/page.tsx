@@ -135,6 +135,17 @@ export default function Home() {
                 focus:outline-none focus:ring-2
                 focus:ring-bmx-blue focus:ring-opacity-50
               "
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.getElementById("horarios")
+                if (element) {
+                  const elementPosition = element.getBoundingClientRect().top + window.scrollY - 120
+                  window.scrollTo({
+                    top: elementPosition,
+                    behavior: "smooth"
+                  })
+                }
+              }}
             >
               VER HORARIOS
             </a>
@@ -305,7 +316,7 @@ export default function Home() {
       </section>
 
       {/* FAQ / Información Section */}
-      <section className="w-full py-20 bg-gradient-to-r from-bmx-pink/5 to-bmx-blue/5">
+      <section id="faq" className="w-full py-20 bg-gradient-to-r from-bmx-pink/5 to-bmx-blue/5">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-2 text-center animate-on-scroll section-title">
             INFORMACIÓN / <span className="text-bmx-pink">PREGUNTAS FRECUENTES</span>

@@ -29,6 +29,19 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault()
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY - 120
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth"
+      })
+    }
+    setIsMenuOpen(false)
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -43,18 +56,41 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#horarios" className="text-gray-800 hover:text-bmx-blue font-medium transition-colors">
+            <a 
+              href="#horarios" 
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "horarios")}
+            >
               Horarios
-            </Link>
-            <Link href="#galeria" className="text-gray-800 hover:text-bmx-blue font-medium transition-colors">
+            </a>
+            <a 
+              href="#faq" 
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "faq")}
+            >
+              Información
+            </a>
+            <a 
+              href="#galeria" 
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "galeria")}
+            >
               Galería
-            </Link>
-            <Link href="#testimonios" className="text-gray-800 hover:text-bmx-blue font-medium transition-colors">
+            </a>
+            <a 
+              href="#testimonios" 
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "testimonios")}
+            >
               Testimonios
-            </Link>
-            <Link href="#contacto" className="text-gray-800 hover:text-bmx-blue font-medium transition-colors">
+            </a>
+            <a 
+              href="#contacto" 
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "contacto")}
+            >
               Contacto
-            </Link>
+            </a>
             <a
               href="https://forms.gle/ks8rqw71n6CspcYE9"
               target="_blank"
@@ -88,34 +124,41 @@ export default function Navbar() {
                 <X className="h-6 w-6" />
               </button>
             </div>
-            <Link
+            <a
               href="#horarios"
-              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "horarios")}
             >
               Horarios
-            </Link>
-            <Link
+            </a>
+            <a
+              href="#faq"
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "faq")}
+            >
+              Información
+            </a>
+            <a
               href="#galeria"
-              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "galeria")}
             >
               Galería
-            </Link>
-            <Link
+            </a>
+            <a
               href="#testimonios"
-              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "testimonios")}
             >
               Testimonios
-            </Link>
-            <Link
+            </a>
+            <a
               href="#contacto"
-              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              className="text-gray-800 hover:text-bmx-blue font-medium transition-colors cursor-pointer"
+              onClick={(e) => handleNavClick(e, "contacto")}
             >
               Contacto
-            </Link>
+            </a>
             <a
               href="https://forms.gle/ks8rqw71n6CspcYE9"
               target="_blank"
