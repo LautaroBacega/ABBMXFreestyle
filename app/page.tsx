@@ -152,6 +152,13 @@ export default function Home() {
             <h2 className="text-4xl font-bold mb-6 text-center section-title">
               CAMPEONATO ARGENTINO DE <span className="text-bmx-blue">BMX FREESTYLE</span>
             </h2>
+            <div className="mb-8 flex justify-center">
+              <img 
+                src="/images/BMX-ABRIL-FEED.png" 
+                alt="Campeonato Argentino de BMX Freestyle"
+                className="rounded-lg shadow-lg max-w-sm h-auto"
+              />
+            </div>
             <p className="text-lg text-gray-700 mb-10">
               ¡Demostrá tus habilidades! Participá en el campeonato argentino y competí con los mejores riders del país. 
               Inscribite ahora y sé parte de esta experiencia increíble.
