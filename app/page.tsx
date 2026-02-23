@@ -422,7 +422,7 @@ export default function Home() {
                 <AccordionContent className="text-gray-700 mt-4">
                   <ul className="list-disc ml-6 space-y-2">
                     <li><strong>Cantina y Sala de Reuniones:</strong> Completaremos el cierre durante el primer cuatrimestre</li>
-                    <li><strong>Vestuarios:</strong> Finalizaremos antes del Campeonato Argentino (abril)</li>
+                    <li><strong>Vestuarios</strong> </li>
                     <li><strong>Foampit y Pump Track:</strong> Trasladaremos el Foampit y construiremos un nuevo Pump Track en la segunda mitad del año</li>
                     <li><strong>Parque Olímpico:</strong> Avanzaremos al menos el 50% del proyecto</li>
                     <li><strong>Mantenimiento general:</strong> Mejoras de iluminación, reparación de caminos y mantenimiento de instalaciones</li>
