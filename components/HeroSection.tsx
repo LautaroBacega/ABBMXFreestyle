@@ -6,9 +6,6 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 z-10 text-center pt-20">
         <div className="flex justify-center mb-8 mt-20 sm:mt-8">
           <div className="relative">
-            <div className=" right-0 hidden sm:block  bg-gradient-to-r from-bmx-pink to-bmx-blue text-white text-sm font-bold px-4 py-2 rounded-full rotate-6 animate-pulse shadow-lg">
-              ¡Inscripciones 2026 abiertas!
-            </div>
             <Image
               src="/images/logo.png"
               alt="ABBMX Freestyle Logo"
@@ -16,11 +13,10 @@ export default function HeroSection() {
               height={200}
               className="animate-float"
             />
-          </div>
-        </div>
-        <div className="sm:hidden mb-6 text-center">
-          <div className="bg-gradient-to-r from-bmx-pink to-bmx-blue bg-clip-text text-transparent text-sm font-bold">
-            ¡Inscripciones 2026 abiertas!
+            {/* Badge único: siempre centrado y por encima del logo */}
+            <div className="absolute left-1/2 -top-8 transform -translate-x-1/2 bg-gradient-to-r from-bmx-pink to-bmx-blue text-white font-bold px-4 py-2 rounded-full animate-pulse shadow-lg z-20 rotate-6 w-44 text-center text-sm leading-snug break-words whitespace-normal">
+              ¡Inscripciones 2026 abiertas!
+            </div>
           </div>
         </div>
         <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-800">
