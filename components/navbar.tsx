@@ -44,12 +44,12 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 w-full z-50 h-20 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
+      <div className="container mx-auto px-4 h-full">
+        <div className="flex justify-between items-center h-full">
           <Link href="/" className="flex items-center">
             <Image src="/images/logo.png" alt="ABBMX Freestyle Logo" width={60} height={60} />
           </Link>
