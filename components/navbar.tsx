@@ -92,7 +92,7 @@ export default function Navbar() {
               Contacto
             </a>
             <a
-              href="https://forms.gle/ks8rqw71n6CspcYE9"
+              href="https://wa.link/zwm5na"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full px-6 py-3 transition-all duration-300"
@@ -160,7 +160,7 @@ export default function Navbar() {
               Contacto
             </a>
             <a
-              href="https://forms.gle/ks8rqw71n6CspcYE9"
+              href="https://wa.link/zwm5na"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-bmx-pink hover:bg-bmx-pink/80 text-white rounded-full px-6 py-3 transition-all duration-300"

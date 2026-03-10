@@ -7,7 +7,7 @@ export default function CtaSection() {
           No esperes más para sumarte a las clases BMX. ¡Inscribite ahora y empezá a pedalear!
         </p>
         <a
-          href="https://forms.gle/ks8rqw71n6CspcYE9"
+          href="https://wa.link/zwm5na"
           target="_blank"
           rel="noopener noreferrer"
           className="

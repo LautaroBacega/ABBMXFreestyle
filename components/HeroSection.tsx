@@ -24,7 +24,7 @@ export default function HeroSection() {
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://forms.gle/ks8rqw71n6CspcYE9"
+            href="https://wa.link/zwm5na"
             target="_blank"
             rel="noopener noreferrer"
             className="
